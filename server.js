@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post('/formsubmisson',(req,res)=>{
+app.post('/bmi',(req,res)=>{
   const height=req.body.height
   const weight=req.body.weight
   const age=req.body.age 
