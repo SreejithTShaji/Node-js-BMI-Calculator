@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.post('/formsubmisson',(req,res)=>{
- // console.log(req)
   const height=req.body.height
   const weight=req.body.weight
   const age=req.body.age 
@@ -27,7 +26,6 @@ app.post('/formsubmisson',(req,res)=>{
   let bmi=weight/(height_in_metr*height_in_metr)
   bmi = parseFloat(bmi.toFixed(2));
   let data={height,weight,age,bmi}
-  // res.send(`${height} weight is ${weight} and age is ${age}`) 
   res.render('submit',data)
 })
 
