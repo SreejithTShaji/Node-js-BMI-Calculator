@@ -1,0 +1,21 @@
+//Server without Expresss
+ 
+import http from "http";
+const hostname = "0.0.0.0";
+const port = 3000;
+const server = http.createServer((req, res) => {
+  console.log(req.url);
+  if(req.url=="/hi"){
+res.end("Hi from Server");
+  }
+  else if(req.url=="/hello"){
+res.end("Hello from Server");
+  }
+  else{
+  res.end(req.url)
+  }
+ //res.end("Hi from Server");
+});
+server.listen(port, hostname, () => {
+  console.log("server Started");
+});
